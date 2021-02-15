@@ -1,10 +1,25 @@
+import React from 'react';
 import './styles/App.scss';
 import Navbar from './components/Navbar';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Shop from './components/Shop';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route path="/shop" component={Shop} />
+				<Route exact path="/cart" component={Cart} />
+			</Switch>
+
+			{/* try out */}
+			{/* <Route path="/shop/:id">
+        <div>productdetails</div>
+      </Route> */}
     </div>
   );
 }
