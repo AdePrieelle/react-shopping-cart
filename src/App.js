@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/App.scss';
 import Navbar from './components/Navbar';
 import { Switch, Route } from 'react-router-dom';
@@ -7,19 +7,61 @@ import Shop from './components/Shop';
 import Cart from './components/Cart';
 
 function App() {
+
+	const [order, setOrder] = useState(
+		[
+			// {
+			// 	id: 1,
+			// 	title: "T-shirt black",
+			// 	price: 20
+			// },
+			// {
+			// 	id: 2,
+			// 	title: "Jeans",
+			// 	price: 39
+			// },
+			// {
+			// 	id: 3,
+			// 	title: "Scarf",
+			// 	price: 15
+			// }
+		]
+	);
+
+	const addOrder = (newOrder) => {
+		// newOrder.quantity = 1;
+		const allOrders = order;
+		// check if the item is already in the cart
+		const index = allOrders.findIndex((order) => order.id === newOrder.id);
+		// if the item is not in the cart yet set the quantity to 1
+		if (index === -1) {
+			newOrder.quantity = 1;
+			setOrder(oldOrder => [...oldOrder, newOrder]);
+		} else {
+			// if the item is already in the basket add 1 to the quantity
+			allOrders[index].quantity += 1;
+			setOrder(allOrders);
+		}
+
+		// setOrder(oldOrder => [...oldOrder, newOrder]);
+		// console.log(newOrder);
+	}
+
+	
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar order={order}/>
 			<Switch>
 				<Route exact path="/" component={Home} />
-				<Route path="/shop" component={Shop} />
-				<Route exact path="/cart" component={Cart} />
+				<Route path="/shop">
+					<Shop addOrder={addOrder} />
+				</Route>
+				{/* <Route exact path="/cart" component={Cart} /> */}
+				<Route exact path="/cart">
+					<Cart order={order} />
+				</Route>
 			</Switch>
-
-			{/* try out */}
-			{/* <Route path="/shop/:id">
-        <div>productdetails</div>
-      </Route> */}
     </div>
   );
 }

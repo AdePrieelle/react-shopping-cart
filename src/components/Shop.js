@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/Shop.scss';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import ShopDetails from './ShopDetails';
 import ProductDetails from './ProductDetails';
 
 const Shop = (props) => {
+  // only gain props.match directly when the component={} is in <Route> and not nested inside
   // console.log(props.match);
+  const match = useRouteMatch();
+
   const productsArray = [
     {
       id: 1,
@@ -29,14 +32,20 @@ const Shop = (props) => {
     <div>
       <div className="shop">Shop</div>
       <Switch>
-        <Route exact path={props.match.path}>
-          {/* <ShopDetails products={products} match={props.match} /> */}
+        <Route exact path={match.path}>
           <ShopDetails products={products} />
         </Route>
-        <Route path={`${props.match.path}/:productId`}>
-          <ProductDetails products={products} />
-          {/* <div>productdetails</div> */}
+        <Route path={`${match.path}/:productId`}>
+          <ProductDetails products={products} addOrder={props.addOrder} />
         </Route>
+
+
+        {/* 2. example to pass props to route */}
+        {/* <Route exact path="/props-through-render" render={(props) => <PropsPage {...props} title={`Props through render`} />} /> */}
+        
+        {/* 4. render in route*/}
+        {/* <Route exact path={props.match.path} render={(props) => <ShopDetails {...props} products={products} />} /> */}
+        {/* <Route path={`${props.match.path}/:productId`} render={(props) => <ProductDetails {...props} products={products} />} /> */}
       </Switch>
     </div>
 

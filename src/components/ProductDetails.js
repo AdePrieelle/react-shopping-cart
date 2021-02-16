@@ -33,12 +33,15 @@ const ProductDetails = (props) => {
   const product = products[productId - 1];
   // 3.
   // const product = products[`${match.params.productId}` - 1];
+  // 4. render in route
+  // const product = products[`${props.match.params.productId}` - 1];
 
   return (
     <div>
       <div className="product-details">ProductDetails</div>
       <div className="product-title">{product.title}</div>
       <div className="product-price"> €{product.price}</div>
+      <button onClick={props.addOrder.bind(this, product)}>Add</button>
     </div>
   )
 }
