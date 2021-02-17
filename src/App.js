@@ -30,7 +30,7 @@ function App() {
 
 	const addOrder = (newOrder) => {
 		// newOrder.quantity = 1;
-		const allOrders = order;
+		const allOrders = [...order];
 		// check if the item is already in the cart
 		const index = allOrders.findIndex((order) => order.id === newOrder.id);
 		// if the item is not in the cart yet set the quantity to 1
