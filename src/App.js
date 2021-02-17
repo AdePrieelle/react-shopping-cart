@@ -47,6 +47,41 @@ function App() {
 		// console.log(newOrder);
 	}
 
+	const incrementQuantityOrderItem = (e) => {
+		const indexOfOrder = e.target.parentNode.id;
+		const clonedOrder = [...order];
+		// used for select option
+		// if (clonedOrder[indexOfOrder].quantity < 9) {
+		// 	clonedOrder[indexOfOrder].quantity += 1;
+		// 	setOrder(clonedOrder);
+		// }
+		clonedOrder[indexOfOrder].quantity += 1;
+		setOrder(clonedOrder);
+	}
+
+	const decrementQuantityOrderItem = (e) => {
+		const indexOfOrder = e.target.parentNode.id;
+		const clonedOrder = [...order];
+		if (clonedOrder[indexOfOrder].quantity > 1) {
+			clonedOrder[indexOfOrder].quantity -= 1;
+			setOrder(clonedOrder);
+		}
+	}
+
+	// const setQuanitityOrderItem = (e) => {
+	// 	const indexOfOrder = e.target.parentNode.id;
+	// 	const clonedOrder = [...order];
+	// 	clonedOrder[indexOfOrder].quantity = +e.target.value;
+	// 	setOrder(clonedOrder);
+	// }
+
+	const deleteOrderItem = (e) => {
+		const indexOfOrder = e.target.parentNode.id;
+		const clonedOrder = [...order];
+		clonedOrder.splice(indexOfOrder, 1);
+		setOrder(clonedOrder);
+	}
+
 	
 
   return (
@@ -55,11 +90,19 @@ function App() {
 			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route path="/shop">
-					<Shop addOrder={addOrder} />
+					<Shop 
+						addOrder={addOrder} 
+					/>
 				</Route>
 				{/* <Route exact path="/cart" component={Cart} /> */}
 				<Route exact path="/cart">
-					<Cart order={order} />
+					<Cart 
+						order={order} 
+						incrementQuantityOrderItem={incrementQuantityOrderItem}
+						decrementQuantityOrderItem={decrementQuantityOrderItem}
+						deleteOrderItem={deleteOrderItem}
+						// setQuanitityOrderItem={setQuanitityOrderItem}
+					/>
 				</Route>
 			</Switch>
     </div>
