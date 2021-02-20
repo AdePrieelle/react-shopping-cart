@@ -24,8 +24,9 @@ const ShopDetails = (props) => {
           {/* 2. */}
           <Link to={`${url}/${product.id}`}>
           {/* <Link to={`shop/${product.id}`}> */}
-
-            <h1>{product.title}</h1>
+            <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
+            <h1 className="product-title">{product.title}</h1>
+            <h2 className="product-price">€{product.price.toFixed(2).replace('.', ',')}</h2>
             {/* <div>{product.price}</div> */}
           </Link>
         </div>
@@ -37,4 +38,3 @@ const ShopDetails = (props) => {
 export default ShopDetails;
 // 1.
 // export default withRouter(ShopDetails);
-

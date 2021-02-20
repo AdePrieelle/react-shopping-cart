@@ -3,30 +3,34 @@ import '../styles/Shop.scss';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import ShopDetails from './ShopDetails';
 import ProductDetails from './ProductDetails';
+import allProducts from './AllProducts';
 
 const Shop = (props) => {
   // only gain props.match directly when the component={} is in <Route> and not nested inside
   // console.log(props.match);
   const match = useRouteMatch();
 
-  const productsArray = [
-    {
-      id: 1,
-      title: "T-shirt black",
-      price: 20
-    },
-    {
-      id: 2,
-      title: "Jeans",
-      price: 39
-    },
-    {
-      id: 3,
-      title: "Scarf",
-      price: 15
-    }
-  ]
-  const [products, setProducts] = useState(productsArray);
+  // const productsArray = [
+  //   {
+  //     id: 1,
+  //     title: "T-shirt black",
+  //     price: 20,
+  //     image: tshirtMen,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Jeans",
+  //     price: 39
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Scarf",
+  //     price: 15
+  //   }
+  // ]
+  // const productsArray = allProducts;
+  // console.log(allProducts);
+  const [products, setProducts] = useState(allProducts);
 
   return (
     <div>

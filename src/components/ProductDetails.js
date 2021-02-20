@@ -40,7 +40,9 @@ const ProductDetails = (props) => {
     <div>
       <div className="product-details">ProductDetails</div>
       <div className="product-title">{product.title}</div>
-      <div className="product-price"> €{product.price}</div>
+      <div className="product-price">€{product.price.toFixed(2).replace('.', ',')}</div>
+      <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
+      <div className="product-gender">category: {product.gender}</div>
       <button onClick={props.addOrder.bind(this, product)}>Add</button>
     </div>
   )

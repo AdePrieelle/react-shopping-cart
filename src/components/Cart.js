@@ -27,7 +27,8 @@ const Cart = (props) => {
       {props.order.map((order, index) => (
         <div key={order.id} id={index}>
           <div className="order-title">{order.title}</div>
-          <div className="order-price">{order.price}</div>
+          <img className="order-img" src={order.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
+          <div className="order-price">€{order.price.toFixed(2).replace('.', ',')}</div>
           <div className="order-quantity">{order.quantity}</div>
           {/* <input className="order-quantity" onChange={props.setQuanitityOrderItem.bind(this)} value={order.quantity} type="number" min="1" step="1"></input> */}
           {/* <select name="quantity" onChange={props.setQuanitityOrderItem.bind(this)} value={order.quantity}>
@@ -44,7 +45,7 @@ const Cart = (props) => {
 
           <button className="update-quantity" onClick={props.incrementQuantityOrderItem.bind(this)}>Icrement quantity</button>
           <button className="update-quantity" onClick={props.decrementQuantityOrderItem.bind(this)}>Decrement quantity</button>
-          <div className="subtotal-product">{order.price*order.quantity}</div>
+          <div className="subtotal-product">€{(order.price*order.quantity).toFixed(2).replace('.', ',')}</div>
           <button className="delete-from-cart" onClick={props.deleteOrderItem.bind(this)}>Remove</button>
         </div>
       ))}
@@ -52,7 +53,7 @@ const Cart = (props) => {
         <div className="order-summary-title">Order Summary</div>
         <div className="subtotal">
           <div className="subtotalAmount">Subtotal({subtotalAmountOfProducts})</div>
-        <div className="subtotalPrice">{subtotalPrice}</div>
+        <div className="subtotalPrice">€{subtotalPrice.toFixed(2).replace('.', ',')}</div>
         </div>
       </div>
     </div>
