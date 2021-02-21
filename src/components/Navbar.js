@@ -30,7 +30,6 @@ const Navbar = (props) => {
       </ul>
       <div className="shopping-cart-icon">
         <Link to="/cart">
-          {/* <i className="fas fa-shopping-cart"></i> */}
           <div className="shopping-icon-amount">
             <i className="fas fa-shopping-bag"></i>
             {(subtotalAmountOfProducts > 0) 

@@ -7,54 +7,72 @@ import Shop from './components/Shop';
 import Cart from './components/Cart';
 
 function App() {
+	// console.log("mount App ----------")
+	const [order, setOrder] = useState([]);
+	// console.log(order);
 
-	const [order, setOrder] = useState(
-		[
-			// {
-			// 	id: 1,
-			// 	title: "T-shirt black",
-			// 	price: 20
-			// },
-			// {
-			// 	id: 2,
-			// 	title: "Jeans",
-			// 	price: 39
-			// },
-			// {
-			// 	id: 3,
-			// 	title: "Scarf",
-			// 	price: 15
-			// }
-		]
-	);
+	const addOrder = (newOrderProduct) => {
 
-	const addOrder = (newOrder) => {
-		// newOrder.quantity = 1;
+		if (newOrderProduct.size === undefined) {
+			newOrderProduct.size = "M";
+		}
+
 		const allOrders = [...order];
+		const newOrder = Object.assign({}, newOrderProduct);
+		// console.log(allOrders)
+		// console.log(newOrder)
+
+		console.log("order+++++++++++++++++")
+		console.log(order);
+		console.log("newOrder+++++++")
+		console.log(newOrder);
 		// check if the item is already in the cart
-		const index = allOrders.findIndex((order) => order.id === newOrder.id);
+		const index = allOrders.findIndex((order) => (order.id === newOrder.id && order.size === newOrder.size));
+		// console.log(index);
 		// if the item is not in the cart yet set the quantity to 1
 		if (index === -1) {
 			newOrder.quantity = 1;
 			setOrder(oldOrder => [...oldOrder, newOrder]);
 		} else {
+			// console.log("same sizeee--------------")
 			// if the item is already in the basket add 1 to the quantity
 			allOrders[index].quantity += 1;
 			setOrder(allOrders);
 		}
 
+	}
+		
+
+		/*
+		// const index = allOrders.findIndex((order) => (order.id === newOrder.id && order.size === newOrder.size));
+		const index = allOrders.findIndex((order) => (order.id === newOrder.id));
+		if (index === -1) {
+			newOrder.quantity = 1;
+			setOrder(oldOrder => [...oldOrder, newOrder]);
+			console.log("totally new order-------");
+		} else {
+			// if the item is already in the basket add 1 to the quantity
+			// console.log(allOrders[index].size);
+			// console.log(newOrder.size)
+			if (allOrders[index].size === newOrder.size) {
+				allOrders[index].quantity += 1;
+				setOrder(allOrders);
+				console.log("same order and same size");
+			} else {
+				newOrder.quantity = 1;
+				setOrder(oldOrder => [...oldOrder, newOrder]);
+				console.log("same order different size");
+			}
+		}
+		
 		// setOrder(oldOrder => [...oldOrder, newOrder]);
 		// console.log(newOrder);
 	}
+	*/
 
 	const incrementQuantityOrderItem = (e) => {
 		const indexOfOrder = e.target.parentNode.id;
 		const clonedOrder = [...order];
-		// used for select option
-		// if (clonedOrder[indexOfOrder].quantity < 9) {
-		// 	clonedOrder[indexOfOrder].quantity += 1;
-		// 	setOrder(clonedOrder);
-		// }
 		clonedOrder[indexOfOrder].quantity += 1;
 		setOrder(clonedOrder);
 	}
@@ -68,21 +86,12 @@ function App() {
 		}
 	}
 
-	// const setQuanitityOrderItem = (e) => {
-	// 	const indexOfOrder = e.target.parentNode.id;
-	// 	const clonedOrder = [...order];
-	// 	clonedOrder[indexOfOrder].quantity = +e.target.value;
-	// 	setOrder(clonedOrder);
-	// }
-
 	const deleteOrderItem = (e) => {
 		const indexOfOrder = e.target.parentNode.id;
 		const clonedOrder = [...order];
 		clonedOrder.splice(indexOfOrder, 1);
 		setOrder(clonedOrder);
 	}
-
-	
 
   return (
     <div className="App">
@@ -91,17 +100,15 @@ function App() {
 				<Route exact path="/" component={Home} />
 				<Route path="/shop">
 					<Shop 
-						addOrder={addOrder} 
+						addOrder={addOrder}
 					/>
 				</Route>
-				{/* <Route exact path="/cart" component={Cart} /> */}
 				<Route exact path="/cart">
 					<Cart 
 						order={order} 
 						incrementQuantityOrderItem={incrementQuantityOrderItem}
 						decrementQuantityOrderItem={decrementQuantityOrderItem}
 						deleteOrderItem={deleteOrderItem}
-						// setQuanitityOrderItem={setQuanitityOrderItem}
 					/>
 				</Route>
 			</Switch>

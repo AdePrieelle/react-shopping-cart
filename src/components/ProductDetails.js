@@ -1,40 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/ProductDetails.scss';
-
-// 3 options to get access to match
-// 1. withRouter
-// import { withRouter } from 'react-router-dom';
-// 2. useParams
 import { useParams } from 'react-router-dom';
-// 3. useRouteMatch
-// import { useRouteMatch } from 'react-router-dom';
-
-
 
 const ProductDetails = (props) => {
-  // 2.
+  // console.log("Mount ProductDetails--------------")
+
   const { productId } = useParams();
-  // 3.
-  // console.log(props.match);
-  // const match = useRouteMatch();
-
   const products = props.products;
-
-  // 1.
-  // console.log(props.match);
-  // 2.
-  // console.log(productId);
-  // 3.
-  // console.log(match);
-
-  // 1.
-  // const product = products[`${props.match.params.productId}` - 1];
-  // 2.
   const product = products[productId - 1];
-  // 3.
-  // const product = products[`${match.params.productId}` - 1];
-  // 4. render in route
-  // const product = products[`${props.match.params.productId}` - 1];
+  // console.log("product below---")
+  // console.log(product);
+  // new
+  // const [productItem, setProductItem] = useState(product);
+
+  // const theOrder = props.order;
+  // console.log(theOrder);
+  // old
+  const selectSize = (e) => {
+    let selectedSize = e.target.value;
+    product.size = selectedSize;
+  }
+
+  // new
+  // const selectSize = (e) => {
+  //   let selectedSize = e.target.value;
+  //   const clonedProduct = productItem;
+  //   clonedProduct.size = selectedSize;
+  //   setProductItem(clonedProduct);
+  // }
 
   return (
     <div>
@@ -43,13 +36,17 @@ const ProductDetails = (props) => {
       <div className="product-price">€{product.price.toFixed(2).replace('.', ',')}</div>
       <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
       <div className="product-gender">category: {product.gender}</div>
+      <select name="size" id="size" defaultValue="M" className="product-size" onChange={selectSize.bind(this)}>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+      </select>
       <button onClick={props.addOrder.bind(this, product)}>Add</button>
     </div>
   )
 }
 
 export default ProductDetails;
-// wrap ProductDetails in withRouter to access props.match
-// 1.
-// export default withRouter(ProductDetails);
-
