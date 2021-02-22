@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Shop.scss';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import ShopDetails from './ShopDetails';
 import ProductDetails from './ProductDetails';
-import allProducts from './AllProducts';
+import AllProducts from './AllProducts';
 
 const Shop = (props) => {
 
   const match = useRouteMatch();
-  const [products, setProducts] = useState(allProducts);
+  // const [products, setProducts] = useState(allProducts);
+  const products = AllProducts;
+  // console.log(products);
 
   return (
     <div>

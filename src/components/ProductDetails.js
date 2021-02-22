@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles/ProductDetails.scss';
 import { useParams } from 'react-router-dom';
 
@@ -36,14 +36,28 @@ const ProductDetails = (props) => {
       <div className="product-price">€{product.price.toFixed(2).replace('.', ',')}</div>
       <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
       <div className="product-gender">category: {product.gender}</div>
-      <select name="size" id="size" defaultValue="M" className="product-size" onChange={selectSize.bind(this)}>
+      {/* <select name="size" id="size" defaultValue="M" className="product-size" onChange={selectSize.bind(this)}>
         <option value="XS">XS</option>
         <option value="S">S</option>
         <option value="M">M</option>
         <option value="L">L</option>
         <option value="XL">XL</option>
         <option value="XXL">XXL</option>
-      </select>
+      </select> */}
+      <div className="product-size" onChange={selectSize.bind(this)}>
+        <input type="radio" name="size" id="XS" value="XS" />
+        <label htmlFor="XS">XS</label>
+        <input type="radio" name="size" id="S" value="S" />
+        <label htmlFor="S">S</label>
+        <input type="radio" name="size" id="M" value="M" defaultChecked />
+        <label htmlFor="M">M</label>
+        <input type="radio" name="size" id="L" value="L" />
+        <label htmlFor="L">L</label>
+        <input type="radio" name="size" id="XL" value="XL" />
+        <label htmlFor="XL">XL</label>
+        <input type="radio" name="size" id="XXL" value="XXL" />
+        <label htmlFor="XXL">XXL</label>
+      </div>
       <button onClick={props.addOrder.bind(this, product)}>Add</button>
     </div>
   )
