@@ -1,33 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/ProductDetails.scss';
 import { useParams } from 'react-router-dom';
 
 const ProductDetails = (props) => {
-  // console.log("Mount ProductDetails--------------")
-
   const { productId } = useParams();
-  const products = props.products;
-  const product = products[productId - 1];
-  // console.log("product below---")
-  // console.log(product);
-  // new
-  // const [productItem, setProductItem] = useState(product);
+  const products = [...props.products];
+  const product = Object.assign({}, products[productId - 1]);
 
-  // const theOrder = props.order;
-  // console.log(theOrder);
-  // old
+  useEffect(() => {
+    // set the product.size equal to the defaultChecked input radio value
+    product.size = document.querySelector("input[name=size]:checked").value;
+  });
+
   const selectSize = (e) => {
+    // set the product.size to the selected input radio value
     let selectedSize = e.target.value;
     product.size = selectedSize;
   }
-
-  // new
-  // const selectSize = (e) => {
-  //   let selectedSize = e.target.value;
-  //   const clonedProduct = productItem;
-  //   clonedProduct.size = selectedSize;
-  //   setProductItem(clonedProduct);
-  // }
 
   return (
     <div>

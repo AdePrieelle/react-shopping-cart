@@ -7,68 +7,26 @@ import Shop from './components/Shop';
 import Cart from './components/Cart';
 
 function App() {
-	// console.log("mount App ----------")
 	const [order, setOrder] = useState([]);
-	// console.log(order);
 
 	const addOrder = (newOrderProduct) => {
 
-		if (newOrderProduct.size === undefined) {
-			newOrderProduct.size = "M";
-		}
-
 		const allOrders = [...order];
 		const newOrder = Object.assign({}, newOrderProduct);
-		// console.log(allOrders)
-		// console.log(newOrder)
 
-		console.log("order+++++++++++++++++")
-		console.log(order);
-		console.log("newOrder+++++++")
-		console.log(newOrder);
 		// check if the item is already in the cart
 		const index = allOrders.findIndex((order) => (order.id === newOrder.id && order.size === newOrder.size));
-		// console.log(index);
 		// if the item is not in the cart yet set the quantity to 1
 		if (index === -1) {
 			newOrder.quantity = 1;
 			setOrder(oldOrder => [...oldOrder, newOrder]);
 		} else {
-			// console.log("same sizeee--------------")
 			// if the item is already in the basket add 1 to the quantity
 			allOrders[index].quantity += 1;
 			setOrder(allOrders);
 		}
 
 	}
-		
-
-		/*
-		// const index = allOrders.findIndex((order) => (order.id === newOrder.id && order.size === newOrder.size));
-		const index = allOrders.findIndex((order) => (order.id === newOrder.id));
-		if (index === -1) {
-			newOrder.quantity = 1;
-			setOrder(oldOrder => [...oldOrder, newOrder]);
-			console.log("totally new order-------");
-		} else {
-			// if the item is already in the basket add 1 to the quantity
-			// console.log(allOrders[index].size);
-			// console.log(newOrder.size)
-			if (allOrders[index].size === newOrder.size) {
-				allOrders[index].quantity += 1;
-				setOrder(allOrders);
-				console.log("same order and same size");
-			} else {
-				newOrder.quantity = 1;
-				setOrder(oldOrder => [...oldOrder, newOrder]);
-				console.log("same order different size");
-			}
-		}
-		
-		// setOrder(oldOrder => [...oldOrder, newOrder]);
-		// console.log(newOrder);
-	}
-	*/
 
 	const incrementQuantityOrderItem = (e) => {
 		const indexOfOrder = e.target.parentNode.id;
