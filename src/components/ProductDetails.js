@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 const ProductDetails = (props) => {
   const { productId } = useParams();
   const products = [...props.products];
+  // clone the product object on each component rerender to make sure no previous size is selected yet in product
   const product = Object.assign({}, products[productId - 1]);
 
   useEffect(() => {
@@ -22,17 +23,9 @@ const ProductDetails = (props) => {
     <div>
       <div className="product-details">ProductDetails</div>
       <div className="product-title">{product.title}</div>
-      <div className="product-price">€{product.price.toFixed(2).replace('.', ',')}</div>
+      <div className="product-price">€{props.formatPriceValue(product.price)}</div>
       <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
       <div className="product-gender">category: {product.gender}</div>
-      {/* <select name="size" id="size" defaultValue="M" className="product-size" onChange={selectSize.bind(this)}>
-        <option value="XS">XS</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-        <option value="XXL">XXL</option>
-      </select> */}
       <div className="product-size" onChange={selectSize.bind(this)}>
         <input type="radio" name="size" id="XS" value="XS" />
         <label htmlFor="XS">XS</label>

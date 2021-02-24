@@ -3,12 +3,6 @@ import '../styles/Navbar.scss';
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
-
-  let subtotalAmountOfProducts = 0;
-  props.order.map(order => (
-    subtotalAmountOfProducts += order.quantity
-  ));
-
   return (
     <nav>
       <div className="logo">
@@ -32,8 +26,8 @@ const Navbar = (props) => {
         <Link to="/cart">
           <div className="shopping-icon-amount">
             <i className="fas fa-shopping-bag"></i>
-            {(subtotalAmountOfProducts > 0) 
-              ? <div className="amount-of-cart-order-items">{subtotalAmountOfProducts}</div>
+            {(props.subtotalAmountOfProducts > 0) 
+              ? <div className="amount-of-cart-order-items">{props.subtotalAmountOfProducts}</div>
               : null
             }
           </div>

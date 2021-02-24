@@ -6,21 +6,25 @@ import ProductDetails from './ProductDetails';
 import AllProducts from './AllProducts';
 
 const Shop = (props) => {
-
   const match = useRouteMatch();
-  // const [products, setProducts] = useState(allProducts);
   const products = AllProducts;
-  // console.log(products);
 
   return (
     <div>
       <div className="shop">Shop</div>
       <Switch>
         <Route exact path={match.path}>
-          <ShopDetails products={products} />
+          <ShopDetails 
+            products={products} 
+            formatPriceValue = {props.formatPriceValue}
+          />
         </Route>
         <Route path={`${match.path}/:productId`}>
-          <ProductDetails products={products} addOrder={props.addOrder} />
+          <ProductDetails 
+            products={products} 
+            addOrder={props.addOrder} 
+            formatPriceValue = {props.formatPriceValue}
+          />
         </Route>
       </Switch>
     </div>

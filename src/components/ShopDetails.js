@@ -15,7 +15,7 @@ const ShopDetails = (props) => {
           <Link to={`${url}/${product.id}`}>
             <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
             <h1 className="product-title">{product.title}</h1>
-            <h2 className="product-price">€{product.price.toFixed(2).replace('.', ',')}</h2>
+            <h2 className="product-price">€{props.formatPriceValue(product.price)}</h2>
           </Link>
         </div>
       ))}
