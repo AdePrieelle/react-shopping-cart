@@ -25,7 +25,7 @@ const AllProducts = [
   },
   {
     id: 2,
-    title: "M's ultralight Packable Jacker",
+    title: "M's ultralight Packable Jacket",
     price: 250,
     image: jacketMen,
     gender: "men"
