@@ -79,7 +79,7 @@ function App() {
 	const subtotalAmountOfProducts = getSubtotalAmountOfProducts();
 
 	const formatPriceValue = (price) => {
-		return (price.toFixed(2).replace('.', ','));
+		return (`€${price.toFixed(2).replace('.', ',')}`);
 	}
 
   return (

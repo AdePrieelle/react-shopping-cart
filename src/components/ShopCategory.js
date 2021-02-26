@@ -11,6 +11,7 @@ const ShopCategory = (props) => {
     <div>
       <Switch>
         <Route exact path={path}>
+          <div className="shop-category-title">{props.categoryTitle}</div>
           <ShopDetails 
             products={props.productsGender}
             formatPriceValue = {props.formatPriceValue}
@@ -25,7 +26,6 @@ const ShopCategory = (props) => {
         </Route>
       </Switch>
     </div>
-
   )
 }
 

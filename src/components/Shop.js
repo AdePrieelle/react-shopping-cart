@@ -17,8 +17,8 @@ const Shop = (props) => {
   ))
 
   return (
-    <div>
-      <div className="shop">Shop</div>
+    <div className="shop">
+      <div className="shop-title">Shop</div>
       <Link to={`${url}/all`}>
         All      
       </Link>
@@ -31,6 +31,7 @@ const Shop = (props) => {
       <Switch>
         <Route path={`${path}/all`}>
           <ShopCategory
+            categoryTitle={"All Clothing"}
             products={products}
             productsGender={products}
             addOrder={props.addOrder}
@@ -39,6 +40,7 @@ const Shop = (props) => {
         </Route>
         <Route path={`${path}/men`}>
           <ShopCategory
+            categoryTitle={"Men's Clothing"}
             products={products}
             productsGender={productsMen}
             addOrder={props.addOrder}
@@ -47,6 +49,7 @@ const Shop = (props) => {
         </Route>
         <Route path={`${path}/women`}>
           <ShopCategory
+            categoryTitle={"Women's Clothing"}
             products={products}
             productsGender={productsWomen}
             addOrder={props.addOrder}
