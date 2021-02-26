@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/Shop.scss';
 import { Link, Switch, Route, useRouteMatch } from 'react-router-dom';
-import ShopDetails from './ShopDetails';
-import ProductDetails from './ProductDetails';
+// import ShopDetails from './ShopDetails';
+// import ProductDetails from './ProductDetails';
 import AllProducts from './AllProducts';
+import ShopCategory from './ShopCategory';
 
 const Shop = (props) => {
   const { path, url } = useRouteMatch();
@@ -28,6 +29,34 @@ const Shop = (props) => {
         Women    
       </Link>
       <Switch>
+        <Route path={`${path}/all`}>
+          <ShopCategory
+            products={products}
+            productsGender={products}
+            addOrder={props.addOrder}
+            formatPriceValue={props.formatPriceValue}
+          />
+        </Route>
+        <Route path={`${path}/men`}>
+          <ShopCategory
+            products={products}
+            productsGender={productsMen}
+            addOrder={props.addOrder}
+            formatPriceValue={props.formatPriceValue}
+          />
+        </Route>
+        <Route path={`${path}/women`}>
+          <ShopCategory
+            products={products}
+            productsGender={productsWomen}
+            addOrder={props.addOrder}
+            formatPriceValue={props.formatPriceValue}
+          />
+        </Route>
+      </Switch>
+
+      
+      {/* <Switch>
         <Route exact path={`${path}/all`}>
           <ShopDetails 
             products={products}
@@ -40,8 +69,8 @@ const Shop = (props) => {
             addOrder={props.addOrder} 
             formatPriceValue = {props.formatPriceValue}
           />
-        </Route>
-        <Route exact path={`${path}/men`}>
+        </Route> */}
+        {/* <Route exact path={`${path}/men`}>
           <ShopDetails 
             products={productsMen}
             formatPriceValue = {props.formatPriceValue}
@@ -67,7 +96,13 @@ const Shop = (props) => {
             formatPriceValue = {props.formatPriceValue}
           />
         </Route>
-      </Switch>
+      </Switch> */}
+      
+
+
+
+
+
       {/* <Switch>
         <Route exact path={match.path}>
           <ShopDetails 
