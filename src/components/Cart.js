@@ -14,8 +14,8 @@ const Cart = (props) => {
   const subtotalPrice = getSubtotalPrice();
 
   return (
-    <div>
-      <div className="cart">Cart</div>
+    <div className="cart">
+      <div className="cart-title">Cart</div>
       {props.order.length === 0 && 
         <div className="no-orders">
           <div className="no-orders-title-header">

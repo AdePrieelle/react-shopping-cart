@@ -20,14 +20,15 @@ const ProductDetails = (props) => {
   }
 
   return (
-    <div>
-      <div className="product-details">ProductDetails</div>
+    <div className="product-details">
       <div className="product-title">{product.title}</div>
-      <div className="product-price">€{props.formatPriceValue(product.price)}</div>
-      <img className="product-img" src={product.image} style={{width: "200px", height: "auto"}} alt="product-img"></img>
-      <Link to={`/shop/${product.gender}`}>
-        <div className="product-gender">category: {product.gender}</div>
-      </Link>
+      <div className="product-img-wrapper">
+        <img className="product-img" src={product.image} alt="product-img"></img>
+      </div>
+      {/* <Link to={`/shop/${product.gender}`}>
+        <div className="product-gender">{product.gender}</div>
+      </Link> */}
+      <div className="product-price">{props.formatPriceValue(product.price)}</div>
       <div className="product-size" onChange={selectSize.bind(this)}>
         <input type="radio" name="size" id="XS" value="XS" />
         <label htmlFor="XS">XS</label>
@@ -42,7 +43,7 @@ const ProductDetails = (props) => {
         <input type="radio" name="size" id="XXL" value="XXL" />
         <label htmlFor="XXL">XXL</label>
       </div>
-      <button onClick={props.addOrder.bind(this, product)}>Add</button>
+      <button onClick={props.addOrder.bind(this, product)}>Add to Bag</button>
     </div>
   )
 }
