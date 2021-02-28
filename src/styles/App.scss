@@ -1,5 +1,10 @@
-.App {
+@import "./partials/variables";
+
+.app {
   font-family: "Roboto", sans-serif;
+  .app-content {
+    margin-top: $nav-height;
+  }
   a {
     text-decoration: none;
   }

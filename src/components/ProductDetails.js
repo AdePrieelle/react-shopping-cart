@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../styles/ProductDetails.scss';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ProductDetails = (props) => {
   const { productId } = useParams();

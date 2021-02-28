@@ -42,7 +42,7 @@ function App() {
 	}
 
 	const getIndexOfOrderItem = (e) => {
-		return (e.target.parentNode.id);
+		return (e.target.id);
 	}
 
 	const incrementQuantityOrderItem = (e) => {
@@ -83,32 +83,34 @@ function App() {
 	}
 
   return (
-    <div className="App">
+    <div className="app">
 			<Navbar 
 				order={order}
 				subtotalAmountOfProducts={subtotalAmountOfProducts}
 			/>
-			<Switch>
-				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route path="/shop">
-					<Shop 
-						addOrder={addOrder}
-						formatPriceValue = {formatPriceValue}
-					/>
-				</Route>
-				<Route exact path="/cart">
-					<Cart 
-						order={order} 
-						incrementQuantityOrderItem={incrementQuantityOrderItem}
-						decrementQuantityOrderItem={decrementQuantityOrderItem}
-						deleteOrderItem={deleteOrderItem}
-						subtotalAmountOfProducts={subtotalAmountOfProducts}
-						formatPriceValue = {formatPriceValue}
-					/>
-				</Route>
-			</Switch>
+			<div className="app-content">
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route path="/shop">
+						<Shop 
+							addOrder={addOrder}
+							formatPriceValue = {formatPriceValue}
+						/>
+					</Route>
+					<Route exact path="/cart">
+						<Cart 
+							order={order} 
+							incrementQuantityOrderItem={incrementQuantityOrderItem}
+							decrementQuantityOrderItem={decrementQuantityOrderItem}
+							deleteOrderItem={deleteOrderItem}
+							subtotalAmountOfProducts={subtotalAmountOfProducts}
+							formatPriceValue = {formatPriceValue}
+						/>
+					</Route>
+				</Switch>
+			</div>
     </div>
   );
 }
