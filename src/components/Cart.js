@@ -17,91 +17,82 @@ const Cart = (props) => {
   return (
     <div className="cart">
       <div className="cart-content">
-
-        <div className="cart-items-amount">Your Bag ({props.subtotalAmountOfProducts})</div>
-        <div className="order-item-summary">
-          <div className="order-item-wrapper">
-            {props.order.length > 0 &&
-            props.order.map((order, index) => (
-              <div key={index} id={index} className="order-item">
-                <div className="order-title-wrapper order-title-wrapper-1">
-                  <Link to={`/shop/${order.gender}/${order.id}`}>
-                    <div className="order-title">{order.title}</div>
-                  </Link>
-                </div>
-                <div className="order-details">
-                  <div className="order-img-wrapper">
-                    <Link to={`/shop/${order.gender}/${order.id}`}>
-                      {/* <div className="order-title">{order.title}</div> */}
-                      <img className="order-img" src={order.image} alt="product-img"></img>
-                    </Link>
-                  </div>
-                  <div className="order-item-details">
-                    {/* <div className="order-items-details-info"> */}
-                    <div className="order-title-wrapper order-title-wrapper-2">
+        {props.order.length > 0 &&
+          <div className="cart-items-amount-order-item-summary-wrapper">
+            <div className="cart-items-amount">Your Bag ({props.subtotalAmountOfProducts})</div>
+            <div className="order-item-summary">
+              <div className="order-item-wrapper">
+                {props.order.map((order, index) => (
+                  <div key={index} id={index} className="order-item">
+                    <div className="order-title-wrapper order-title-wrapper-1">
                       <Link to={`/shop/${order.gender}/${order.id}`}>
                         <div className="order-title">{order.title}</div>
                       </Link>
                     </div>
-                      <div className="order-size">Size: {order.size}</div>
-                      <div className="order-quantity-update-wrapper">
-                        <div className="order-quantity-title">Qty:</div>
-                        {/* <button className="update-quantity" onClick={props.decrementQuantityOrderItem.bind(this)}>-</button> */}
-                        <i className="fas fa-minus update-quantity" id={index} onClick={props.decrementQuantityOrderItem.bind(this)}></i>
-                        <div className="order-quantity">{order.quantity}</div>
-                        <i className="fas fa-plus update-quantity" id={index} onClick={props.incrementQuantityOrderItem.bind(this)}></i>
-                        {/* <button className="update-quantity" onClick={props.incrementQuantityOrderItem.bind(this)}>+</button> */}
+                    <div className="order-details">
+                      <div className="order-img-wrapper">
+                        <Link to={`/shop/${order.gender}/${order.id}`}>
+                          <img className="order-img" src={order.image} alt="product-img"></img>
+                        </Link>
                       </div>
-                      <div className="subtotal-product">{props.formatPriceValue(order.price*order.quantity)}</div>
-                      {/* <div className="order-price">{props.formatPriceValue(order.price)}</div> */}
-                    {/* </div> */}
-                    <div className="delete-from-cart" id={index} onClick={props.deleteOrderItem.bind(this)}>Remove</div>
+                      <div className="order-item-details">
+                        <div className="order-title-wrapper order-title-wrapper-2">
+                          <Link to={`/shop/${order.gender}/${order.id}`}>
+                            <div className="order-title">{order.title}</div>
+                          </Link>
+                        </div>
+                          <div className="order-size">Size: {order.size}</div>
+                          <div className="order-quantity-update-wrapper">
+                            <div className="order-quantity-title">Qty:</div>
+                            <i className="fas fa-minus update-quantity" id={index} onClick={props.decrementQuantityOrderItem.bind(this)}></i>
+                            <div className="order-quantity">{order.quantity}</div>
+                            <i className="fas fa-plus update-quantity" id={index} onClick={props.incrementQuantityOrderItem.bind(this)}></i>
+                          </div>
+                          <div className="subtotal-product">{props.formatPriceValue(order.price*order.quantity)}</div>
+                        <div className="delete-from-cart" id={index} onClick={props.deleteOrderItem.bind(this)}>Remove</div>
+                      </div>
+                    </div>
+                    <div className="divide-line"></div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="order-summary">
+                <div className="order-summary-title">Order Summary</div>
+                <div className="subtotal">
+                  <div className="subtotalAmount">Subtotal ({props.subtotalAmountOfProducts})</div>
+                  <div className="subtotalPrice">{props.formatPriceValue(subtotalPrice)}</div>
+                </div>
+                <div className="order-shipping-costs">
+                  <div className="order-shipping-costs-title">Estimated Shipping (free over €100)</div>
+                  <div className="order-shipping-costs-price">
+                    {subtotalPrice >= 100 ? props.formatPriceValue(0) : props.formatPriceValue(shippingCosts)}
                   </div>
                 </div>
                 <div className="divide-line"></div>
+                <div className="order-estimated-total">
+                  <div className="order-estimated-total-title">Estimated Total</div>
+                  <div className="order-estimated-total-price">
+                    {subtotalPrice >= 100 ? props.formatPriceValue(subtotalPrice) : props.formatPriceValue(subtotalPrice + shippingCosts)}
+                  </div>
+                </div>
+                <div className="checkout-button-wrapper">
+                  <div className="checkout-button">Checkout</div>
+                </div>
               </div>
-            ))
-            }
-          </div>
-
-          {props.order.length > 0 &&
-          <div className="order-summary">
-            <div className="order-summary-title">Order Summary</div>
-            <div className="subtotal">
-              <div className="subtotalAmount">Subtotal ({props.subtotalAmountOfProducts})</div>
-              <div className="subtotalPrice">{props.formatPriceValue(subtotalPrice)}</div>
-            </div>
-            <div className="order-shipping-costs">
-              <div className="order-shipping-costs-title">Estimated Shipping (free over €100)</div>
-              <div className="order-shipping-costs-price">
-                {subtotalPrice >= 100 ? props.formatPriceValue(0) : props.formatPriceValue(shippingCosts)}
-              </div>
-            </div>
-            <div className="divide-line"></div>
-            <div className="order-estimated-total">
-              <div className="order-estimated-total-title">Estimated Total</div>
-              <div className="order-estimated-total-price">
-                {subtotalPrice >= 100 ? props.formatPriceValue(subtotalPrice) : props.formatPriceValue(subtotalPrice + shippingCosts)}
-              </div>
-            </div>
-            <div className="checkout-button-wrapper">
-              <div className="checkout-button">Checkout</div>
             </div>
           </div>
-          }
-        </div>
-
+        }
 
         {props.order.length === 0 && 
           <div className="no-orders">
-            <div className="no-orders-title-header">
-              Oops!
-            </div>
-            <div className="no-orders-title-message">
-              You don't have any products in your basket yet
+            <div className="no-orders-title">
+              Looks like your bag is empty
             </div>
             <Link to="/shop">
-              Shop here
+              <div className="no-orders-continue-shopping-button">
+                Continue shopping
+              </div>
             </Link>
           </div>
         }
