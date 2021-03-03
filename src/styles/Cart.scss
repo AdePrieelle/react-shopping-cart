@@ -1,11 +1,11 @@
 @import "./partials/variables";
 
 .cart {
-  max-width: $media-query-xl-screen;
+  max-width: $media-query-xxlarge-screen;
   @media screen and (min-width: $media-query-large-screen) {
     padding-bottom: 80px;
   }
-  @media screen and (min-width: $media-query-xl-screen) {
+  @media screen and (min-width: $media-query-xxlarge-screen) {
     margin: 0 auto;
   }
   .cart-content {
@@ -174,11 +174,10 @@
             justify-content: center;
             align-items: center;
             margin-top: 30px;
+            margin-bottom: 40px;
             @media screen and (min-width: $media-query-large-screen) {
-              // margin-top: 40px;
               margin-bottom: 30px;
             }
-            margin-bottom: 40px;
             .checkout-button {
               display: flex;
               align-items: center;

@@ -8,10 +8,12 @@ const ShopCategory = (props) => {
   const { path } = useRouteMatch();
 
   return (
-    <div>
+    <div className="shop-category">
       <Switch>
         <Route exact path={path}>
-          <div className="shop-category-title">{props.categoryTitle}</div>
+          <div className="shop-category-title-wrapper">
+            <div className="shop-category-title">{props.categoryTitle}</div>
+          </div>
           <ShopDetails 
             products={props.productsGender}
             formatPriceValue = {props.formatPriceValue}
