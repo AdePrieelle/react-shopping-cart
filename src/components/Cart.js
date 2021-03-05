@@ -89,7 +89,7 @@ const Cart = (props) => {
             <div className="no-orders-title">
               Looks like your bag is empty
             </div>
-            <Link to="/shop">
+            <Link to="/shop/all">
               <div className="no-orders-continue-shopping-button">
                 Continue shopping
               </div>

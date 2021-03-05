@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/ShopCategory.scss';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import ShopNavbar from "./ShopNavbar";
 import ShopDetails from './ShopDetails';
 import ProductDetails from './ProductDetails';
 
@@ -11,9 +11,7 @@ const ShopCategory = (props) => {
     <div className="shop-category">
       <Switch>
         <Route exact path={path}>
-          <div className="shop-category-title-wrapper">
-            <div className="shop-category-title">{props.categoryTitle}</div>
-          </div>
+          <ShopNavbar />
           <ShopDetails 
             products={props.productsGender}
             formatPriceValue = {props.formatPriceValue}
