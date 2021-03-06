@@ -11,8 +11,10 @@ nav {
   height: 65px;
   padding: 0 40px;
   background-color: $nav-bg-color;
+  // background-color: white;
   a {
     color: $secondary-text-color;
+    // color: black;
     text-decoration: none;
   }
   .logo {
@@ -38,6 +40,7 @@ nav {
         align-items: center;
         width: 1.5rem;
         height: 1.5rem;
+        // color: white;
         font-size: 0.8rem;
         font-weight: bold;
         background-color: $add-to-bag-color;
