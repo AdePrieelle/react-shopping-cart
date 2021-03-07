@@ -7,7 +7,7 @@ const Navbar = (props) => {
     <nav>
       <div className="logo">
         <Link to="/">
-          Logo
+          ecowear
         </Link>
       </div>
       <ul className="nav-links">
