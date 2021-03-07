@@ -31,10 +31,13 @@
           }
           .order-item {
             .order-title-wrapper {
-              .order-title {
-                margin-bottom: 10px;
-                font-size: 1rem;
-                font-weight: 500;
+              a {
+                color: black;
+                .order-title {
+                  margin-bottom: 10px;
+                  font-size: 1rem;
+                  font-weight: 500;
+                }
               }
             }
             .order-title-wrapper-1 {
