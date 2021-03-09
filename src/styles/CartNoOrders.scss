@@ -1,0 +1,26 @@
+@import "./partials/variables";
+
+.no-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 40px 20px;
+  .no-orders-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .no-orders-continue-shopping-button {
+    margin-top: 40px;
+    padding: 20px 60px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    background-color: black;
+    border-radius: 30px;
+    transition: transform 200ms ease;
+  }
+  .no-orders-continue-shopping-button:hover {
+    transform: scale(1.05);
+  }
+}
