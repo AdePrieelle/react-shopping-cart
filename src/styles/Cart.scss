@@ -8,29 +8,27 @@
   @media screen and (min-width: $media-query-xxlarge-screen) {
     margin: 0 auto;
   }
-  .cart-items-amount-order-item-summary-wrapper {
-    .cart-items-amount {
-      display: flex;
-      align-items: center;
-      height: $cart-items-amount-height;
-      padding: 0 20px;
-      font-size: 1.4rem;
-      font-weight: 700;
+  .cart-items-amount {
+    display: flex;
+    align-items: center;
+    height: $cart-items-amount-height;
+    padding: 0 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .order-item-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - (#{$nav-height} + #{$cart-items-amount-height}));
+    @media screen and (min-width: $media-query-large-screen) {
+      flex-direction: row;
+      align-items: flex-start;
     }
-    .order-item-summary {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: calc(100vh - (#{$nav-height} + #{$cart-items-amount-height}));
-      @media screen and (min-width: $media-query-large-screen) {
-        flex-direction: row;
-        align-items: flex-start;
-      }
-      .order-item-wrapper {
-        flex-grow: 3;
-        > div {
-          padding: 0 20px;
-        }
+    .order-item-wrapper {
+      flex-grow: 3;
+      > div {
+        padding: 0 20px;
       }
     }
   }

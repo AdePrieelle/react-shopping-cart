@@ -18,32 +18,34 @@ const Cart = (props) => {
 
   return (
     <div className="cart">
-      {props.order.length > 0 &&
-        <div className="cart-items-amount-order-item-summary-wrapper">
-          <div className="cart-items-amount">Your Bag ({props.subtotalAmountOfProducts})</div>
-          <div className="order-item-summary">
-            <div className="order-item-wrapper">
-              <CartOrderItems 
-                order={props.order} 
-                incrementQuantityOrderItem={props.incrementQuantityOrderItem}
-                decrementQuantityOrderItem={props.decrementQuantityOrderItem}
-                formatPriceValue={props.formatPriceValue}
-                deleteOrderItem={props.deleteOrderItem}
-              />
-            </div>
-            <CartOrderSummary 
-              formatPriceValue={props.formatPriceValue}  
-              subtotalAmountOfProducts={props.subtotalAmountOfProducts}
-              subtotalPrice={subtotalPrice}
-              shippingCosts={shippingCosts}
+      <div className="cart-items-amount">Your Bag ({props.subtotalAmountOfProducts})</div>
+      <div className="order-item-summary">
+        <div className="order-item-wrapper" style={{
+          display: props.order.length === 0 && "flex", 
+          flexDirection: props.order.length === 0 && "column", 
+          justifyContent: props.order.length === 0 && "center", 
+          alignItems: props.order.length === 0 && "center"
+          }}>
+          {props.order.length > 0 &&
+            <CartOrderItems 
+              order={props.order} 
+              incrementQuantityOrderItem={props.incrementQuantityOrderItem}
+              decrementQuantityOrderItem={props.decrementQuantityOrderItem}
+              formatPriceValue={props.formatPriceValue}
+              deleteOrderItem={props.deleteOrderItem}
             />
-          </div>
+          }
+          {props.order.length === 0 &&
+            <CartNoOrders />
+          }
         </div>
-      }
-      
-      {props.order.length === 0 && 
-        <CartNoOrders />
-      }
+        <CartOrderSummary 
+          formatPriceValue={props.formatPriceValue}  
+          subtotalAmountOfProducts={props.subtotalAmountOfProducts}
+          subtotalPrice={subtotalPrice}
+          shippingCosts={shippingCosts}
+        />
+      </div>
     </div>
   )
 }
