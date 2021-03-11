@@ -13,13 +13,16 @@ const ShopCategory = (props) => {
         <Route exact path={path}>
           <ShopNavbar />
           <ShopDetails 
-            products={props.productsGender}
+            products={props.products}
+            productsAll={props.productsAll}
+            productsMen={props.productsMen}
+            productsWomen={props.productsWomen}
             formatPriceValue = {props.formatPriceValue}
           />
         </Route>
         <Route path={`${path}/:productId`}>
           <ProductDetails 
-            products={props.products} 
+            productsGender={props.productsGender} 
             addOrder={props.addOrder} 
             formatPriceValue = {props.formatPriceValue}
           />

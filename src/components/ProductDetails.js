@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const ProductDetails = (props) => {
   const { productId } = useParams();
-  const products = [...props.products];
+  const products = [...props.productsGender];
   // clone the product object on each component rerender to make sure no previous size is selected yet in product
   const product = Object.assign({}, products[productId - 1]);
 
