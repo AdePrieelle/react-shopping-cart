@@ -68,7 +68,10 @@
       }
     }
     .title {
-      font-size: 2.2rem;
+      font-size: 2rem;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 2.2rem;
+      }
       @media screen and (min-width: $media-query-medium-screen) {
         font-size: 2.5rem;
       }
