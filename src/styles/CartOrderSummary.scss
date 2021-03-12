@@ -1,7 +1,6 @@
 @import "./partials/variables";
 
 .order-summary {
-  margin-top: 60px;
   @media screen and (min-width: $media-query-large-screen) {
     flex-grow: 4;
     margin-top: -40px;

@@ -2,9 +2,6 @@
 
 .cart {
   max-width: $media-query-xxlarge-screen;
-  @media screen and (min-width: $media-query-large-screen) {
-    padding-bottom: 80px;
-  }
   @media screen and (min-width: $media-query-xxlarge-screen) {
     margin: 0 auto;
   }
@@ -27,6 +24,10 @@
     }
     .order-item-wrapper {
       flex-grow: 3;
+      margin-bottom: 60px;
+      @media screen and (min-width: $media-query-large-screen) {
+        margin-bottom: 80px;
+      }
       > div {
         padding: 0 20px;
       }
