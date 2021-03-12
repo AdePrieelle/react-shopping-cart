@@ -5,14 +5,14 @@
   margin: 0 auto;
   .shop-categories {
     display: grid;
-    grid-gap: 2px;
-    height: 100%;
-    min-height: 400px;
     grid-template-columns: minmax(0, 1fr);
     @media screen and (min-width: $media-query-medium-screen) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-rows: repeat(5, minmax(0, 1fr));
     }
+    grid-gap: 2px;
+    height: 100%;
+    min-height: 400px;
     margin-top: calc((#{$nav-height}));
     .shop-category {
       position: relative;

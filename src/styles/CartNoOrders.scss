@@ -4,6 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* 
+  margin-bottom = $cart-items-amount-height - margin-top from order-summary
+  this will center the no-orders div in between the navbar and order-summary
+  */
   margin-bottom: 50px;
   .no-orders-title {
     font-size: 1.5rem;

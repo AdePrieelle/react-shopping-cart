@@ -44,8 +44,8 @@
     margin: 20px 0;
     input[type="radio"] {
       position: relative;
-      visibility: hidden;
       display: none;
+      visibility: hidden;
     }
     label {
       display: flex;
@@ -53,9 +53,9 @@
       align-items: center;
       width: 40px;
       height: 40px;
+      color: black;
       font-size: 0.8rem;
       font-weight: bold;
-      color: black;
       border: 3px solid black;
       border-radius: 50%;
       background-color: white;
@@ -78,15 +78,15 @@
   }
   button {
     margin-bottom: 40px;
-    background-color: $add-to-bag-color;
     padding: 14px 90px;
-    border: none;
-    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
     color: white;
     font-size: 14px;
     font-weight: 700;
-    font-family: "Roboto";
     text-align: center;
+    border: none;
+    border-radius: 30px;
+    background-color: $add-to-bag-color;
     transition: transform 200ms ease;
     cursor: pointer;
     @media screen and (min-width: $media-query-xxsmall-screen) {

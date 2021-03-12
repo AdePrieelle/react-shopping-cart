@@ -1,10 +1,10 @@
 @import "./partials/variables";
 
 .shop-details {
-  margin: 0 auto;
-  padding-bottom: 60px;
   width: 100%;
   max-width: $media-query-xlarge-screen;
+  margin: 0 auto;
+  padding-bottom: 60px;
   .shop-details-products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
