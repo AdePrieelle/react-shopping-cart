@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/react-shopping-cart/static/css/main.f15f79fe.chunk.css",
+    "main.js": "/react-shopping-cart/static/js/main.7c5761dc.chunk.js",
+    "main.js.map": "/react-shopping-cart/static/js/main.7c5761dc.chunk.js.map",
+    "runtime-main.js": "/react-shopping-cart/static/js/runtime-main.bf2c499a.js",
+    "runtime-main.js.map": "/react-shopping-cart/static/js/runtime-main.bf2c499a.js.map",
+    "static/js/2.0c550653.chunk.js": "/react-shopping-cart/static/js/2.0c550653.chunk.js",
+    "static/js/2.0c550653.chunk.js.map": "/react-shopping-cart/static/js/2.0c550653.chunk.js.map",
+    "static/js/3.ab21a853.chunk.js": "/react-shopping-cart/static/js/3.ab21a853.chunk.js",
+    "static/js/3.ab21a853.chunk.js.map": "/react-shopping-cart/static/js/3.ab21a853.chunk.js.map",
+    "index.html": "/react-shopping-cart/index.html",
+    "static/css/main.f15f79fe.chunk.css.map": "/react-shopping-cart/static/css/main.f15f79fe.chunk.css.map",
+    "static/js/2.0c550653.chunk.js.LICENSE.txt": "/react-shopping-cart/static/js/2.0c550653.chunk.js.LICENSE.txt",
+    "static/media/ShopNavbar.scss": "/react-shopping-cart/static/media/background-img-shop-category-title.5bc4c972.jpg",
+    "static/media/beltAll.7e6a7ec4.png": "/react-shopping-cart/static/media/beltAll.7e6a7ec4.png",
+    "static/media/dressWomen.3e57ac58.png": "/react-shopping-cart/static/media/dressWomen.3e57ac58.png",
+    "static/media/hatAll.631ad0b5.png": "/react-shopping-cart/static/media/hatAll.631ad0b5.png",
+    "static/media/Home.scss": "/react-shopping-cart/static/media/homeWomen.f8706c22.jpg",
+    "static/media/jacket2Men.a4d51ad9.png": "/react-shopping-cart/static/media/jacket2Men.a4d51ad9.png",
+    "static/media/jacket2Women.6bdc7fe7.png": "/react-shopping-cart/static/media/jacket2Women.6bdc7fe7.png",
+    "static/media/jacketMen.2c2bd292.png": "/react-shopping-cart/static/media/jacketMen.2c2bd292.png",
+    "static/media/jacketWomen.0e062148.png": "/react-shopping-cart/static/media/jacketWomen.0e062148.png",
+    "static/media/longshirtMen.ae91c2d2.png": "/react-shopping-cart/static/media/longshirtMen.ae91c2d2.png",
+    "static/media/r1pulloverMen.56109744.png": "/react-shopping-cart/static/media/r1pulloverMen.56109744.png",
+    "static/media/socks2All.37540e6d.png": "/react-shopping-cart/static/media/socks2All.37540e6d.png",
+    "static/media/socksAll.e7be72da.png": "/react-shopping-cart/static/media/socksAll.e7be72da.png",
+    "static/media/sweaterMen.4194025e.png": "/react-shopping-cart/static/media/sweaterMen.4194025e.png",
+    "static/media/swimsuitWomen.3d8f5319.png": "/react-shopping-cart/static/media/swimsuitWomen.3d8f5319.png",
+    "static/media/tshirt2Women.6aa6370a.png": "/react-shopping-cart/static/media/tshirt2Women.6aa6370a.png",
+    "static/media/tshirtMen.3322972a.png": "/react-shopping-cart/static/media/tshirtMen.3322972a.png",
+    "static/media/tshirtWomen.77a4fc46.png": "/react-shopping-cart/static/media/tshirtWomen.77a4fc46.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf2c499a.js",
+    "static/js/2.0c550653.chunk.js",
+    "static/css/main.f15f79fe.chunk.css",
+    "static/js/main.7c5761dc.chunk.js"
+  ]
+}
