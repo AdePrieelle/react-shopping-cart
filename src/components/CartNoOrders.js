@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/CartNoOrders.scss';
 import { Link } from 'react-router-dom';
 
-const CartNoOrders = (props) => {
+const CartNoOrders = () => {
   return (
     <div className="no-orders">
       <div className="no-orders-title">

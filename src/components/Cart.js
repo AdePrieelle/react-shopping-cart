@@ -21,6 +21,7 @@ const Cart = (props) => {
       <div className="cart-items-amount">Your Bag ({props.subtotalAmountOfProducts})</div>
       <div className="order-item-summary">
         <div className="order-item-wrapper" style={{
+          // center the CartNoOrders component when there are no orders in the shopping cart
           display: props.order.length === 0 && "flex", 
           flexDirection: props.order.length === 0 && "column", 
           justifyContent: props.order.length === 0 && "center", 

@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/ShopNavbar.scss';
 import { Link, Switch, Route } from 'react-router-dom';
 
-const ShopNavbar = (props) => {
+const ShopNavbar = () => {
   return (
     <div className="shop-navbar">
       <div className="navbar-title-wrapper">
