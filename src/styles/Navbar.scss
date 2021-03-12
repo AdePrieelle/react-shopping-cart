@@ -33,11 +33,10 @@ nav {
   .nav-links {
     display: flex;
     margin: 0 20px;
-    font-size: 14px;
     @media screen and (min-width: $media-query-xsmall-screen) {
       margin: 0 30px;
-      font-size: 1rem;
     }
+    font-size: 1rem;
     .nav-link:not(:last-child) {
       margin-right: 20px;
       @media screen and (min-width: $media-query-xsmall-screen) {
