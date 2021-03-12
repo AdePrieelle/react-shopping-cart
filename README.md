@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Try a live demo here: [React Shopping Cart](https://adeprieelle.github.io/react-shopping-cart).
+
 ## Available Scripts
 
 In the project directory, you can run:
