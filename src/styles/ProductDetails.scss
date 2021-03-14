@@ -11,7 +11,7 @@
     max-width: 360px;
     padding: 30px 20px;
     font-size: 1.5rem;
-    @media screen and (min-width: $media-query-xxsmall-screen) {
+    @media screen and (min-width: $media-query-small-screen) {
       font-size: 2rem;
     }
     font-weight: 500;
@@ -25,13 +25,16 @@
   }
   .product-img {
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
+    @media screen and (min-width: $media-query-small-screen) {
+      max-width: 400px;
+    }
     height: auto;
     padding: 0 20px;
     border-radius: 8px;
   }
   .product-price {
-    margin-top: 30px;
+    margin: 20px 0;
     font-size: 12px;
     @media screen and (min-width: $media-query-xxsmall-screen) {
       font-size: 14px;
@@ -41,7 +44,7 @@
   }
   .product-size {
     display: flex;
-    margin: 20px 0;
+    margin-bottom: 20px;
     input[type="radio"] {
       position: relative;
       display: none;
