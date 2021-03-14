@@ -63,6 +63,8 @@
       border-radius: 50%;
       background-color: white;
       transition: color 250ms ease, background-color 250ms ease;
+      // remove border that shows when clicking on links in mobile browsers
+      -webkit-tap-highlight-color: transparent;
       cursor: pointer;
       @media screen and (min-width: $media-query-xxsmall-screen) {
         width: 50px;
@@ -91,13 +93,19 @@
     border-radius: 30px;
     background-color: $add-to-bag-color;
     transition: transform 200ms ease;
+    // remove border that shows when clicking on links in mobile browsers
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     @media screen and (min-width: $media-query-xxsmall-screen) {
       padding: 16px 100px;
       font-size: 16px;
     }
-  }
-  button:hover {
-    transform: scale(1.05);
+    &:active {
+      transform: scale(0.95);
+      background-color: darken($add-to-bag-color, 5%);
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }
