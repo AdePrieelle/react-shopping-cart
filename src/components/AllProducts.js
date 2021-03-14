@@ -1,19 +1,19 @@
-import tshirtMen from '../images/tshirtMen.png';
-import jacketMen from "../images/jacketMen.png";
-import jacket2Men from "../images/jacket2Men.png";
-import r1pulloverMen from "../images/r1pulloverMen.png";
-import sweaterMen from "../images/sweaterMen.png";
-import longshirtMen from "../images/longshirtMen.png";
-import jacketWomen from "../images/jacketWomen.png";
-import jacket2Women from "../images/jacket2Women.png";
-import dressWomen from "../images/dressWomen.png";
-import tshirtWomen from "../images/tshirtWomen.png";
-import tshirt2Women from "../images/tshirt2Women.png";
-import swimsuitWomen from "../images/swimsuitWomen.png";
-import beltAll from "../images/beltAll.png";
-import hatAll from "../images/hatAll.png";
-import socksAll from "../images/socksAll.png";
-import socks2All from "../images/socks2All.png";
+import tshirtMen from '../images/tshirtMen.webp';
+import jacketMen from "../images/jacketMen.webp";
+import jacket2Men from "../images/jacket2Men.webp";
+import jacket3Men from "../images/jacket3Men.webp";
+import sweaterMen from "../images/sweaterMen.webp";
+import longshirtMen from "../images/longshirtMen.webp";
+import jacketWomen from "../images/jacketWomen.webp";
+import jacket2Women from "../images/jacket2Women.webp";
+import dressWomen from "../images/dressWomen.webp";
+import tshirtWomen from "../images/tshirtWomen.webp";
+import tshirt2Women from "../images/tshirt2Women.webp";
+import dress2Women from "../images/dress2Women.webp";
+import backpackAll from "../images/backpackAll.webp";
+import backpack2All from "../images/backpack2All.webp";
+import socksAll from "../images/socksAll.webp";
+import socks2All from "../images/socks2All.webp";
 
 const AllProducts = [
   {
@@ -25,23 +25,23 @@ const AllProducts = [
   },
   {
     id: 2,
-    title: "M's ultralight Packable Jacket",
-    price: 250,
-    image: jacketMen,
-    gender: "men"
-  },
-  {
-    id: 3,
     title: "M's DAS Light Hoody",
     price: 350,
     image: jacket2Men,
     gender: "men"
   },
   {
+    id: 3,
+    title: "M's Calcite Jacket",
+    price: 270,
+    image: jacketMen,
+    gender: "men"
+  },
+  {
     id: 4,
-    title: "M's R1 Pullover",
+    title: "M's R2 TechFace Jacket",
     price: 130,
-    image: r1pulloverMen,
+    image: jacket3Men,
     gender: "men"
   },
   {
@@ -83,35 +83,35 @@ const AllProducts = [
     id: 10,
     title: "W's Capilene Cool Trail Bike Henley",
     price: 60,
-    image: tshirt2Women,
+    image: tshirtWomen,
     gender: "women"
   },
   {
     id: 11,
-    title: "W's Glassy Dawn One-Piece Swimsuit",
-    price: 77,
-    image: swimsuitWomen,
+    title: "W's June Lake Swing Dress",
+    price: 120,
+    image: dress2Women,
     gender: "women"
   },
   {
     id: 12,
     title: "W's Ridge Flow Tank",
     price: 45,
-    image: tshirtWomen,
+    image: tshirt2Women,
     gender: "women"
   },
   {
     id: 13,
-    title: "Friction Belt",
-    price: 30,
-    image: beltAll,
+    title: "Arbor Roll Top Pack 30L",
+    price: 120,
+    image: backpackAll,
     gender: "all"
   },
   {
     id: 14,
-    title: "Beanie Hat",
-    price: 40,
-    image: hatAll,
+    title: "Refugio Backpack 28L",
+    price: 80,
+    image: backpack2All,
     gender: "all"
   },
   {

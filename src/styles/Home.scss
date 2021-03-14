@@ -56,20 +56,24 @@
     }
     .shop-category-all {
       background-image: url("../images/homeAll.jpg");
+      background-image: url("../images/homeAll.webp");
       @media screen and (min-width: $media-query-medium-screen) {
         grid-column: 1/-1;
         grid-row: -3/-1;
       }
     }
     .shop-category-women {
-      background-image: url("../images/homeWomen.jpg");
+      background-image: url("../images/homeWomen.png");
+      background-image: url("../images/homeWomen.webp");
+
       @media screen and (min-width: $media-query-medium-screen) {
         grid-column: 1/2;
         grid-row: 1/-3;
       }
     }
     .shop-category-men {
-      background-image: url("../images/homeMen.jpg");
+      background-image: url("../images/homeMen.png");
+      background-image: url("../images/homeMen.webp");
       @media screen and (min-width: $media-query-medium-screen) {
         grid-column: 2/-1;
         grid-row: 1/-3;
