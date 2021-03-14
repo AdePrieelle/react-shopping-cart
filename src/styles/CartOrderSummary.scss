@@ -83,10 +83,16 @@
       background-color: $add-to-bag-color;
       border-radius: 30px;
       transition: transform 200ms ease;
+      // remove border that shows when clicking on links in mobile browsers
+      -webkit-tap-highlight-color: transparent;
       cursor: pointer;
-    }
-    .checkout-button:hover {
-      transform: scale(1.05);
+      &:active {
+        transform: scale(0.95);
+        background-color: darken($add-to-bag-color, 5%);
+      }
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
